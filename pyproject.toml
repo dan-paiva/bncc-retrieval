@@ -1,0 +1,35 @@
+[project]
+name = "bncc-retrieval"
+version = "0.1.0"
+description = "Sugestão de habilidades da BNCC para descrições de aula: léxico, embeddings, cross-encoder e rerank com LLM, avaliados com MRR e Hit@k"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Danilo Paiva" }]
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+dense = ["sentence-transformers>=3.0", "torch>=2.2"]
+llm = ["anthropic>=0.40", "python-dotenv>=1.0"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+bncc-sugerir = "bncc_retrieval.cli:main"
+bncc-avaliar = "bncc_retrieval.evaluate:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
