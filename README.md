@@ -34,7 +34,7 @@ Conjunto de teste: 200 aulas, nunca usadas para ajustar nada. IC 95% por bootstr
 4. **Língua Portuguesa é o gargalo** (Hit@3 de 71%): as 389 habilidades de LP se sobrepõem (EF15LP, EF35LP, EF69LP...), e parte dos "erros" são habilidades vizinhas igualmente válidas. Ver as limitações abaixo.
 
 ### Rerank com LLM
-*Em execução: os números entram aqui com custo por mil consultas.*
+O rerank com Claude (`llm_rerank.py`) está implementado e coberto por testes com cliente falso: schema restrito aos candidatos, código inventado descartado, cache e recusa. **Ainda não rodei no benchmark**, porque isso exige uma chave paga. Para medir: `bncc-avaliar --split test --llm` (com `--llm claude-haiku-5-5` o custo estimado fica abaixo de US$ 0,20).
 
 ## Como funciona
 
@@ -71,7 +71,7 @@ pip install -e ".[dense,llm,dev]"
 
 pytest                                   # 20 testes; o LLM é testado com cliente falso, sem rede
 bncc-avaliar --split test                # métodos locais (baixa os modelos na 1ª vez)
-bncc-avaliar --split test --llm          # + Claude; usa o cache, só chama a API no que faltar
+bncc-avaliar --split test --llm          # + Claude (precisa de chave; usa o cache, só chama a API no que faltar)
 bncc-sugerir "descrição da aula" --componente MA --ano 6
 ```
 
