@@ -9,7 +9,7 @@ Não existe um conjunto público de aulas rotuladas com códigos da BNCC, então
 1. **Sorteio** (`benchmark.sortear`, semente 42): 300 habilidades, estratificadas por componente na proporção do corpus, com no mínimo 10 por componente. Para habilidades de bloco (ex.: EF35LP01), sorteia-se um ano concreto da aula dentro do bloco.
 2. **Escrita**: um modelo Claude recebeu cada habilidade e escreveu uma descrição de aula como um professor faria, com a instrução explícita de **não parafrasear** a habilidade (prompt completo em [`prompt_geracao.md`](prompt_geracao.md)).
 3. **Checagem de vazamento**: nenhuma aula cita o código. A sobreposição de palavras (Jaccard sobre tokens) entre a aula e a habilidade correta tem mediana de **0,07** e máximo de 0,21: a busca não pode depender de copiar texto.
-4. **Revisão humana**: amostra de 30 aulas em [`revisao_humana.md`](revisao_humana.md).
+4. **Revisão humana (pendente)**: amostra de 30 aulas separada em [`revisao_humana.md`](revisao_humana.md), ainda não avaliada.
 5. **Divisão**: 100 consultas em `dev` (para ajustar) e 200 em `test` (só para o número final).
 
 ## Métricas

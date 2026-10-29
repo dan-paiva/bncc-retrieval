@@ -59,7 +59,7 @@ Decisões que valem destacar:
 - **Medição antes de opinião:** split dev/test fixo, intervalos de confiança e teste pareado. Diferenças dentro do IC não são vendidas como ganho.
 
 ## Benchmark
-Não existe conjunto público de aulas rotuladas com a BNCC, então criei um: 300 habilidades sorteadas e estratificadas, uma aula escrita para cada uma sem parafrasear a habilidade, checagem automática de vazamento de texto e revisão humana por amostragem. Protocolo e limitações em [`docs/benchmark.md`](docs/benchmark.md).
+Não existe conjunto público de aulas rotuladas com a BNCC, então criei um: 300 habilidades sorteadas e estratificadas, uma aula escrita para cada uma sem parafrasear a habilidade, checagem automática de vazamento de texto e uma amostra separada para revisão humana (ainda pendente). Protocolo e limitações em [`docs/benchmark.md`](docs/benchmark.md).
 
 **Limitações:** as aulas são sintéticas (os números são otimistas para aulas reais), há um único rótulo por aula (o que pune habilidades vizinhas válidas) e as aulas foram escritas por um modelo da mesma família do rerank.
 
